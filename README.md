@@ -2,7 +2,7 @@
 
 Assimilate Rust from zero [Rust Book](https://doc.rust-lang.org/book/)
 
---
+---
 
 ## Install
 
@@ -18,3 +18,21 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 chmod 777 $HOME/.cargo/env
 source $HOME/.cargo/env
 ```
+
+---
+
+## Programming a Guessing Game
+
+### Setup a new project
+
+```bash
+cargo new guessing_game
+cd guessing_game
+```
+
+### Compile the default program
+
+```bash
+cargo run
+```
+
