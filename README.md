@@ -57,6 +57,8 @@ fn main() {
 }
 ```
 
+---
+
 ## Crate
 
 A crate is a collection of Rust source code files ([see more](https://crates.io/crates/rand)). Those dependencies must be add in the `Cargo.toml`file:
@@ -73,6 +75,8 @@ edition = "2021"
 rand = "0.8.5"
 ```
 
+---
+
 ## Shadowing
 
 Shadowing lets us reuse the `guess` variable name rather than forcing us to create two unique variables, such as `guess_str` and `guess`. Let's convert the String input to number type.
@@ -80,6 +84,8 @@ Shadowing lets us reuse the `guess` variable name rather than forcing us to crea
 ```rust
 let guess: u32 = guess.trim().parse().expect("Please type a number!");
 ```
+
+---
 
 ## Loops
 
@@ -89,13 +95,28 @@ The keyword `loop` creates an infinite loop. So, we need to stop the game when t
 // ...
 
 match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too Small!"),
-            Ordering::Greater => println!("Too Big!"),
-            Ordering::Equal => {
-                println!("You win!");
-                break;
-            }
-        }
-        
+    Ordering::Less => println!("Too Small!"),
+    Ordering::Greater => println!("Too Big!"),
+    Ordering::Equal => {
+        println!("You win!");
+        break;
+    }
+}
+
 // ...
+```
+
+---
+
+## Handling Invalid Inputs
+
+We will use a `match` expression to handle the error with arms. If `parse` is able to successfully turn the string into a number, it will return an `ok` value that contains the resultant number. Else, it will return an `Error` variant.
+
+```rust
+
+let guess: u32 = match guess.trim().parse(){
+    Ok(num) => num,
+    Err(_) => continue,
+};
+
 ```
