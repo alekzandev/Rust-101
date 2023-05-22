@@ -72,3 +72,11 @@ edition = "2021"
 [dependencies]
 rand = "0.8.5"
 ```
+
+## Shadowing
+
+Shadowing lets us reuse the `guess` variable name rather than forcing us to create two unique variables, such as `guess_str` and `guess`. Let's convert the String input to number type.
+
+```rust
+let guess: u32 = guess.trim().parse().expect("Please type a number!");
+```
