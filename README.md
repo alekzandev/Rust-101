@@ -80,3 +80,22 @@ Shadowing lets us reuse the `guess` variable name rather than forcing us to crea
 ```rust
 let guess: u32 = guess.trim().parse().expect("Please type a number!");
 ```
+
+## Loops
+
+The keyword `loop` creates an infinite loop. So, we need to stop the game when the correct number is guessed. Let’s program the game to quit when the user wins by adding a `break` statement.
+
+```rust
+// ...
+
+match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too Small!"),
+            Ordering::Greater => println!("Too Big!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break;
+            }
+        }
+        
+// ...
+```
