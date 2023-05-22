@@ -8,16 +8,16 @@ Assimilate Rust from zero [Rust Book](https://doc.rust-lang.org/book/)
 
 1. Run the following in the local terminal
 
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+    ```bash
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    ```
 
 2. Include Cargo's bin directory. Configure the current shell:
 
-```bash
-chmod 777 $HOME/.cargo/env
-source $HOME/.cargo/env
-```
+    ```bash
+    chmod 777 $HOME/.cargo/env
+    source $HOME/.cargo/env
+    ```
 
 ---
 
@@ -37,6 +37,8 @@ cargo run
 ```
 
 ### Write the code for Guessing Game
+
+Simple code where the user enters a variable on the console and the program prints it.
 
 ```rust
 use std::io;
