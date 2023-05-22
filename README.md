@@ -56,3 +56,19 @@ fn main() {
     println!("You guessed: {guess}");
 }
 ```
+
+## Crate
+
+A crate is a collection of Rust source code files ([see more](https://crates.io/crates/rand)). Those dependencies must be add in the `Cargo.toml`file:
+
+```toml
+[package]
+name = "guessing_game"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.5"
+```
