@@ -22,8 +22,10 @@ fn main() {
             .read_line(&mut guess) // & indicates reference
             .expect("Failed to read line"); // expect is a method of io::Result
 
-        let guess: u32 = guess.trim().parse().expect("Please type a number!"); // shadowing
-
+        let guess: u32 = match guess.trim().parse(){
+            Ok(num) => num,
+            Err(_) => continue,
+        };
         println!("You guessed: {guess}");
 
         match guess.cmp(&secret_number) {
