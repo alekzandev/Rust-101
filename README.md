@@ -120,3 +120,20 @@ let guess: u32 = match guess.trim().parse(){
 };
 
 ```
+
+## Basic Commands
+
+### Init a new default project
+
+Create a new project (binary/application package) with Cargo.toml file if it doesn't exist
+```rust
+cargo init .
+```
+
+### Create a new library
+
+Create a custom library package
+
+```rust
+cargo new --lib <LIBRARY_NAME>
+```
