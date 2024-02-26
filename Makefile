@@ -1,28 +1,31 @@
+.PHONY: all build check doc test format format-check lint
+
 all: build test
 
 build:
-    @cargo build
+	@cargo build
 
 check:
-    @cargo check
+	@cargo check
 
 doc:
-    @cargo doc
+	@cargo doc
 
 test:
-    @cargo test
-    @cargo test --all-features
+	@cargo test
+	@cargo test --all-features
 
 format:
-    @rustup component add rustfmt 2> /dev/null
-    @cargo fmt --all
+	@rustup component add rustfmt 2> /dev/null
+	@cargo fmt --all
 
-format-check
-    @rustup component add rustfmt 2> /dev/null
-    @cargo fmt --all -- --check
+format-check:
+	@rustup component add rustfmt 2> /dev/null
+	@cargo fmt --all -- --check
 
 lint:
-    @rustup component add clippy 2> /dev/null
-    @cargo clippy
+	@rustup component add clippy 2> /dev/null
+	@cargo clippy
 
-.PHONY: all check doc test format format-check lint
+verify-makefile-format:
+	cat -e -t -v Makefile | grep '\t' && echo "Makefile contains tabs" && exit 1 || echo "Makefile is formatted correctly"
