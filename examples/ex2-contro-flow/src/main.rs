@@ -22,4 +22,14 @@ fn main() {
     } else {
         println!("You are an adult");
     }
+
+    if age < 18 && height > 1.70 {
+        println!("You are a tall minor");
+    } else if age < 18 && height < 1.70 {
+        println!("You are a short minor");
+    } else if age >= 18 && height > 1.70 {
+        println!("You are a tall adult");
+    } else {
+        println!("You are a short adult");
+    }
 }
