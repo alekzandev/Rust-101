@@ -137,3 +137,17 @@ Create a custom library package
 ```rust
 cargo new --lib <LIBRARY_NAME>
 ```
+
+### Compile the program
+
+Compile the program and create an executable binary
+
+```rust
+cargo build
+```
+
+Run the binary
+
+```rust
+cargo run
+```
