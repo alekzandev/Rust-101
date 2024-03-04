@@ -126,6 +126,7 @@ let guess: u32 = match guess.trim().parse(){
 ### Init a new default project
 
 Create a new project (binary/application package) with Cargo.toml file if it doesn't exist
+
 ```rust
 cargo init .
 ```
