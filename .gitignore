@@ -15,3 +15,6 @@ Cargo.lock
 
 #VSCODE
 .vscode/
+
+# Macos
+**/.DS_Store
