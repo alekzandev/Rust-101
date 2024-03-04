@@ -10,7 +10,7 @@ fn main() {
         }
     }
 
-    //let maybe_number: Option<Option<()>> = Some(None);
+    let maybe_number: Option<Option<()>> = None;
     let maybe_number = Some(77);
     if let Some(number) = maybe_number {
         println!("The number is {:#?}", number);
