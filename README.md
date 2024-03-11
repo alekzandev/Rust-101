@@ -152,3 +152,31 @@ Run the binary
 ```rust
 cargo run
 ```
+
+## GPG signature
+
+```bash
+gpg --list-secret-keys --keyid-format LONG
+
+gpg --full-generate-key
+
+gpg --armor --export YOUR_GPG_KEY_ID
+
+git config --global user.signingkey YOUR_GPG_KEY_ID
+
+git commit -S -m "your commit message"
+
+
+brew upgrade gnupg  # This has a make step which takes a while
+brew link --overwrite gnupg
+brew install pinentry-mac
+echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+killall gpg-agent
+
+echo "test" | gpg --clearsign
+
+git config --global gpg.program gpg  # perhaps you had this already? On linux maybe gpg2
+git config --global commit.gpgsign true
+
+git log --show-signature -1
+```
