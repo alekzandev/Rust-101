@@ -20,6 +20,6 @@ fn main() {
         person.first_name, 
         person.last_name, 
         person.age,
-         person.email, 
-         person.phone_number);
+        person.email, 
+        person.phone_number);
 }
