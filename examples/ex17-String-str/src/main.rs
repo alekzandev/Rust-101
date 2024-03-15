@@ -6,14 +6,16 @@ fn get_words(sentence: String) -> Vec<String> {
     words
 }
 // return the longest word in the sentence as integer
-fn get_longest_word(words: Vec<String>) -> usize {
+fn get_longest_word(words: Vec<String>) -> (usize, String) {
     let mut longest: usize = 0;
+    let mut longest_word = String::new();
     for word in words {
         if word.len() > longest {
             longest = word.len();
+            longest_word = word;
         }
     }
-    longest
+    (longest, longest_word)
 }
 
 fn main() {
@@ -51,7 +53,8 @@ fn main() {
     match words.len() {
         0 => println!("No words found"),
         _ => {
-            println!("The longest word in the sentence is {} characters long", get_longest_word(words));
+            let (longest, longest_word) = get_longest_word(words);
+            println!("The longest word is '{}' with {} characters", longest_word, longest);
         }
     }
 }
