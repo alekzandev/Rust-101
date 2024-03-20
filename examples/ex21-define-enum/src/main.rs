@@ -3,6 +3,7 @@ enum DiskType {
     HDD,
     Hybrid,
 }
+
 #[derive(Debug)]
 enum DiskSize {
     KB(u32),
@@ -20,5 +21,8 @@ fn main() {
     }
 
     let disk_size = DiskSize::GB(512);
+    println!("{:?}", disk_size);
+
+    let disk_size = DiskSize::TB(1);
     println!("{:?}", disk_size);
 }
