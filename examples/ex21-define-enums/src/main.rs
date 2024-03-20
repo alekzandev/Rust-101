@@ -3,7 +3,6 @@ enum DiskType {
     HDD,
     Hybrid,
 }
-
 #[derive(Debug)]
 enum DiskSize {
     KB(u32),
