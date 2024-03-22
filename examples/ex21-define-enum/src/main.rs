@@ -24,17 +24,17 @@ fn format_size(size: usize) -> String {
     };
     
     match filesize {
-        FileSize::B(bytes) => format!("{:?}", bytes),
-        FileSize::KB(kb) => format!("{:?} KB", kb),
-        FileSize::MB(mb) => format!("{:?} MB", mb),
-        FileSize::GB(gb) => format!("{:?} GB", gb),
-        FileSize::TB(tb) => format!("{:?} TB", tb),
+        FileSize::B(bytes) => format!("{:?} B", bytes),
+        FileSize::KB(kb) => format!("{:?} KB", kb/1000),
+        FileSize::MB(mb) => format!("{:?} MB", mb/1000),
+        FileSize::GB(gb) => format!("{:?} GB", gb/1000),
+        FileSize::TB(tb) => format!("{:?} TB", tb/1000),
     }
 }
 
 fn main() {
     let disk = DiskType::SSD;
-    let size = 12340032432324;
+    let size = 1230;
     println!("Disk type: {:?}", disk);
     println!("Size: {}", format_size(size));
 }
