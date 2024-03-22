@@ -36,5 +36,5 @@ fn main() {
     let disk = DiskType::SSD;
     let size = 1230;
     println!("Disk type: {:?}", disk);
-    println!("Size: {}", format_size(size));
+    println!("Size: {:.6}", format_size(size));
 }
