@@ -1,13 +1,8 @@
 [package]
-name = "rust_fundamentals"
+name = "ex23-option-enum"
 version = "0.1.0"
 edition = "2021"
-author = "Hausdorff94"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
-[[bin]]
-name = "rust_fundamentals"
-path = "main.rs"
