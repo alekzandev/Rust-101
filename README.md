@@ -139,6 +139,10 @@ Create a custom library package
 cargo new --lib <LIBRARY_NAME>
 ```
 
+```rust
+cargo init --lib <LIBRARY_PATH>
+```
+
 ### Compile the program
 
 Compile the program and create an executable binary
@@ -179,4 +183,38 @@ git config --global gpg.program gpg  # perhaps you had this already? On linux ma
 git config --global commit.gpgsign true
 
 git log --show-signature -1
+```
+
+## Documentation
+
+```bash
+cargo doc
+```
+
+### Example
+
+#### Comment function
+
+```rust
+/// # Examples
+/// ```
+/// let x = 5;
+/// let y = 6;
+/// assert_eq!(x + y, 11);
+/// ```
+```
+
+#### Comment module
+
+```rust
+//! # My Crate
+//!
+//! `my_crate` is a collection of utilities to make performing certain calculations more convenient.
+//! 
+//! # Examples
+//! ```
+//! let x = 5;
+//! let y = 6;
+//! assert_eq!(x + y, 11);
+//! ```
 ```
