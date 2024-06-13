@@ -1,4 +1,5 @@
 use std::io;
+
 fn main(){
     let mut input = String::new();
     // true condition
@@ -6,13 +7,12 @@ fn main(){
     while !condition_loop{
         println!("Enter a messages");
         io::stdin().read_line(&mut input).expect("Failed to read line");
-        println!("You entered: {}", input);
+        println!("You entered: {} Input 'exit' to quit.", input);
         if input.trim() == "exit"{
             condition_loop = true;
         } else {
             input.clear();
         }
-
     }
     println!("Goodbye!");
 }
